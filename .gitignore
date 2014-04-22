@@ -1,0 +1,15 @@
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.idea
+.project
+.DS_Store
+._.DS_Store
+nbproject
