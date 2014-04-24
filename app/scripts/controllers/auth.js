@@ -19,13 +19,15 @@ app.controller('AuthCtrl',
     };
 
     $scope.register = function() {
-      if( !$scope.form.username.$error ) {
+      if( !$scope.form.username.$error.taken && !$scope.form.username.$error.invalid ) {
         Auth.register($scope.user).then(function(authUser) {
           User.create(authUser, $scope.user.username);
           $location.path('/');
         }, function(error) {
           $scope.error = error.toString();
         });
+      } else {
+        console.log('Auth Error');
       }
     };
   });
