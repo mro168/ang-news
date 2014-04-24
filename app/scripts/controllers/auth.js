@@ -26,8 +26,6 @@ app.controller('AuthCtrl',
         }, function(error) {
           $scope.error = error.toString();
         });
-      } else {
-        console.log('Auth Error');
       }
     };
   });
