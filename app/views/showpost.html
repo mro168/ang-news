@@ -13,6 +13,8 @@
         </a>
       </div>
       <div>
+        <span>{{ post.score || 0 }} votes</span>
+        &mdash;
         <span>submitted by <a href="#/users/{{ post.owner }}">{{ post.owner }}</a></span>
       </div>
     </div>
