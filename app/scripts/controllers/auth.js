@@ -14,7 +14,14 @@ app.controller('AuthCtrl',
       Auth.login($scope.user).then(function() {
         $location.path('/');
       }, function(error) {
-        $scope.error = error.toString();
+        var fireError = error.toString();
+        while( fireError.indexOf('Error: ') > -1 ) {
+          fireError = fireError.replace('Error: ','');
+        }
+        while( fireError.indexOf('FirebaseSimpleLogin: ') > -1 ) {
+          fireError = fireError.replace('FirebaseSimpleLogin: ','');
+        }
+        $scope.error = fireError;
       });
     };
 
@@ -24,7 +31,14 @@ app.controller('AuthCtrl',
           User.create(authUser, $scope.user.username);
           $location.path('/');
         }, function(error) {
-          $scope.error = error.toString();
+          var fireError = error.toString();
+          while( fireError.indexOf('Error: ') > -1 ) {
+            fireError = fireError.replace('Error: ','');
+          }
+          while( fireError.indexOf('FirebaseSimpleLogin: ') > -1 ) {
+            fireError = fireError.replace('FirebaseSimpleLogin: ','');
+          }
+          $scope.error = fireError;
         });
       }
     };
