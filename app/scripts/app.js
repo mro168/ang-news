@@ -36,4 +36,4 @@ app.config(function ($routeProvider) {
     });
 });
 
-app.constant('FIREBASE_URL', 'https://angular-news-8.firebaseio.com/');
+app.constant('FIREBASE_URL', 'https://angular-news-7.firebaseio.com/');
