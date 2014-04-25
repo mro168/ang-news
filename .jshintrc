@@ -22,6 +22,7 @@
     "angular": false,
     "app": false,
     "Firebase": false,
-    "Hashes": false
+    "Hashes": false,
+    "moment": false
   }
 }

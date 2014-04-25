@@ -13,6 +13,7 @@ app.factory('Post',
           var user = User.getCurrent();
 
           post.owner = user.username;
+          post.createdAt = moment().format('MMMM D YYYY, hh:mm A');
 
           return posts.$add(post).then(function (ref) {
             var postId = ref.name();
@@ -45,6 +46,7 @@ app.factory('Post',
 
           comment.username = user.username;
           comment.postId = postId;
+          comment.createdAt = moment().format('MMMM D YYYY, hh:mm A');
 
           posts.$child(postId).$child('comments').$add(comment).then(function(ref) {
             user.$child('comments').$child(ref.name()).$set({id: ref.name(), postId: postId});

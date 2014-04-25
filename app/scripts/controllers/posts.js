@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('PostsCtrl', function($scope, $location, Post) {
+app.controller('PostsCtrl', function($scope, $firebase, $location, Post) {
   if ($location.path() === '/') {
     $scope.posts = Post.all;
   }
